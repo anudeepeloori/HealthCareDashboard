@@ -4,7 +4,7 @@
     
     
     <div class="patients-header">
-      <h2>Patients</h2>
+      <h4>Patients</h4>
       <img src="../../assets/search_FILL0_wght300_GRAD0_opsz24.svg" alt="Search">
     </div>
 
@@ -28,44 +28,60 @@
 
   <!-- Main Content: Diagnosis & Graphs -->
   <main >
-   
-  <section class="diagnosis-history">
-    <h2>Diagnosis History</h2>
 
+ <section class="diagnosis-history">
+  <h4>Diagnosis History</h4>
+  <div class="diagnosis-container">
     <div class="row align-items-start graph-container">
       <!-- Left Side: Graph (8 columns) -->
       <div class="col-md-8">
         <div class="graph-header d-flex justify-content-between align-items-center">
-          <span><strong>Blood Pressure</strong></span>
-          <button class="filter-btn">Last 6 months</button>
+          <span ><strong>Blood Pressure</strong></span>
+          <button class="filter-btn">Last 6 months <img src="../../assets/ArrowDown.svg" alt=""></button>
         </div>
         <div class="graph-wrapper">
           <app-graph [history]="filteredDiagnosisHistory"></app-graph>
         </div>
       </div>
-  
+
       <!-- Right Side: Systolic & Diastolic (4 columns) -->
-      <div class="col-md-4 systolic-diastolic">
-        <div class="systolic-info">
-          <span class="dot systolic-dot"></span> <span class="label">Systolic</span>
-          <p >160</p>
-          <p >
-            <img src="../../assets/ArrowUp.svg" > Higher than Average
-          </p>
-        </div>
-  
-        <div class="diastolic-info">
-          <span class="dot diastolic-dot"></span> <span class="label">Diastolic</span>
-          <p >78</p>
-          <p >
-            <img src="../../assets/ArrowDown.svg" > Lower than Average
-          </p>
+      <div class="col-md-4 systolic-diastolic" style="margin-top: 5px;">
+        <div class="info-container">
+          
+          <div class="systolic-info">
+            <div class="text-content">
+            <span class="label">
+              <span class="dot systolic-dot"></span> Systolic
+            </span>
+            <p class="value">160</p>
+            <p class="status">
+              <img src="../../assets/ArrowUp.svg" style="margin-top:5px; margin-right:4px" > Higher than Average
+            </p>
+           </div>
+          </div>
+      
+          <hr style="border: 1px solid #ddd; margin-top:-3px; margin-bottom:-3px" >
+
+          <div class="diastolic-info">
+            <div class="text-content">
+            <span class="label">
+              <span class="dot diastolic-dot"></span> Diastolic
+            </span>
+            <p class="value">78</p>
+            <p class="status" >
+              <img src="../../assets/ArrowDown.svg" style="margin-top:5px; margin-right:4px"> Lower than Average
+            </p>
+           </div>
+          </div>
+      
         </div>
       </div>
+      
+
     </div>
+  </div>
 
-
-
+ 
       <div class="vital-signs">
       <div class="card" style="background-color: #E0F3FA;">
         <img src="../../assets/respiratory rate.svg" alt="Respiratory Rate" class="icon">
@@ -96,9 +112,12 @@
         </div>
       </div>
       </div>
-    </section>
+
+    
+  
     
 
+    </section>
 
     <!-- <h2>Diagnostic List</h2> -->
     <app-diagnosis-history [diagnosticList]="diagnosticList"></app-diagnosis-history>
@@ -121,35 +140,35 @@
                 <img src="../../assets/BirthIcon.svg" alt="birthIcon">
                 <div>
                     <p class="label">Date of Birth</p>
-                    <p class="value"><strong>{{ patient.date_of_birth }}</strong></p>
+                    <p class="value">{{ patient.date_of_birth }}</p>
                 </div>
             </li>
             <li>
                 <img src="../../assets/FemaleIcon.svg" alt="genderIcon">
                 <div>
                     <p class="label">Gender</p>
-                    <p class="value"><strong>{{ patient.gender }}</strong></p>
+                    <p class="value">{{ patient.gender }}</p>
                 </div>
             </li>
             <li>
                 <img src="../../assets/PhoneIcon.svg" alt="phoneIcon">
                 <div>
                     <p class="label">Contact Info.</p>
-                    <p class="value"><strong>{{ patient.phone_number }}</strong></p>
+                    <p class="value">{{ patient.phone_number }}</p>
                 </div>
             </li>
             <li>
                 <img src="../../assets/PhoneIcon.svg" alt="phoneIcon">
                 <div>
                     <p class="label">Emergency Contacts</p>
-                    <p class="value"><strong>{{ patient.emergency_contact }}</strong></p>
+                    <p class="value">{{ patient.emergency_contact }}</p>
                 </div>
             </li>
             <li>
                 <img src="../../assets/InsuranceIcon.svg" alt="insuranceIcon">
                 <div>
                     <p class="label">Insurance Provider</p>
-                    <p class="value"><strong>{{ patient.insurance_type }}</strong></p>
+                    <p class="value">{{ patient.insurance_type }}</p>
                 </div>
             </li>
         </ul>
@@ -161,7 +180,7 @@
   
   <!-- Lab Results -->
 <div class="lab-results-container">
-  <h2 style="margin-top: -4px;">Lab Results</h2>
+  <h4 style="margin-top: -4px;">Lab Results</h4>
   <div class="lab-results">
       <ul >
           <li *ngFor="let lab of patient.lab_results; let i = index" 
