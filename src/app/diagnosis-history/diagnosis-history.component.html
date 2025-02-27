@@ -1,0 +1,23 @@
+<div class="diagnostic-table">
+  <h2 style="margin-top: -5px;">Diagnostic List</h2>
+  
+  <!-- Scrollable Table Wrapper -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Problem/Diagnosis</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let diagnosis of diagnosticList">
+          <td>{{ diagnosis.name }}</td>
+          <td>{{ diagnosis.description }}</td>
+          <td>{{ diagnosis.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
