@@ -488,3 +488,58 @@
 .lab-results-container::-webkit-scrollbar-track {
   background: transparent;
 }
+
+
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1fr 1fr; /* two columns instead of three */
+  }
+  .right-sidebar {
+    grid-column: 1 / -1; /* span right-sidebar across both columns (moves it below) */
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr; /* single column layout */
+  }
+  .right-sidebar {
+    grid-column: 1 / -1; /* ensure it spans full width in single column (optional) */
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;     /* full width on small screens */
+    min-height: auto;/* let it shrink naturally with content */
+  }
+}
+@media (max-width: 768px) {
+  .patients-header {
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
+@media (max-width: 1024px) {
+  .vital-signs { 
+    flex-wrap: wrap; 
+    justify-content: space-around;
+  }
+  .card {
+    width: 45%;   /* two cards per row at most on mid-size screens */
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .vital-signs {
+    flex-direction: column;   /* stack cards vertically on mobile */
+    align-items: center;
+  }
+  .card {
+    width: 90%;  /* nearly full width on a phone, for readability */
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .lab-results-container { max-height: none; }
+}

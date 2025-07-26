@@ -131,3 +131,28 @@
 .dots-icon:hover {
   opacity: 0.7;
 }
+
+.logo img { max-width: 150px; }
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;   /* center items horizontally in column layout */
+    height: auto;          /* let height expand to fit content */
+    padding: 10px 20px;    /* increase padding for a nicer look */
+    border-radius: 20px;   /* reduce radius since navbar is taller */
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;             /* vertical spacing between links */
+    margin-top: 10px;      /* space between logo and links */
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-links a {
+    display: block;
+    text-align: center;    /* center-align link text in mobile nav */
+    padding: 8px 0;
+  }
+}
